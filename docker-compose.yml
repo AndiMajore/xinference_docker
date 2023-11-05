@@ -1,0 +1,19 @@
+services:
+  xinference:
+    image: xinference
+    container_name: xinference
+    build: .
+    command: bash launch_script.sh
+    restart: always
+    volumes:
+      - /cosybio/project/LLM/xinference_configs/:/cosybio/project/LLM/xinference_configs/
+      - /cosybio/archive/old_projects/LLM/models/:/cosybio/archive/old_projects/LLM/models/
+    ports:
+      - "9997:9997"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 2
+              capabilities: [gpu]
