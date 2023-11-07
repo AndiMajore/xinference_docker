@@ -9,6 +9,7 @@ RUN pip install xinference[all]
 RUN mamba install git
 
 # Install specific xinference version
+ARG CACHEBUST=2
 RUN git clone https://github.com/AndiMajore/inference.git
 
 RUN pip install ./inference
