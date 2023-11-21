@@ -9,7 +9,7 @@ RUN pip install xinference[all]
 RUN mamba install git
 
 # Install specific xinference version
-ARG CACHEBUST=2
+ARG CACHEBUST=5
 RUN git clone https://github.com/AndiMajore/inference.git
 
 RUN pip install ./inference
@@ -18,7 +18,10 @@ RUN npm install
 RUN npm run build
 RUN cp -r ./build /opt/conda/lib/python3.9/site-packages/xinference/web/ui/build
 
-WORKDIR /opt/conda/lib/python3.9/site-packages/xinference/
+WORKDIR /opt/conda/lib/python3.9/
+
+RUN pip install huggingface_hub
 
 COPY ./launch_script.sh .
 COPY ./register_and_launch.sh .
+COPY ./login.py .

@@ -5,6 +5,8 @@ services:
     build: .
     command: bash launch_script.sh
     restart: always
+    env_file:
+      - hf.env.dev
     volumes:
       - /cosybio/project/LLM/xinference_configs/:/cosybio/project/LLM/xinference_configs/
       - /cosybio/archive/old_projects/LLM/models/:/cosybio/archive/old_projects/LLM/models/
