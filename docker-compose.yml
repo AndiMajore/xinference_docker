@@ -8,8 +8,10 @@ services:
     env_file:
       - hf.env
     volumes:
+      - /srv/llm/xinference_cache/:/tmp/xinference/
       - /cosybio/project/LLM/xinference_configs/:/cosybio/project/LLM/xinference_configs/
-      - /cosybio/archive/old_projects/LLM/models/:/cosybio/archive/old_projects/LLM/models/
+#      - ./config.json:/config.json
+#      - /cosybio/archive/old_projects/LLM/models/:/cosybio/archive/old_projects/LLM/models/
     ports:
       - "9997:9997"
     deploy:
@@ -17,5 +19,5 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 4
               capabilities: [gpu]

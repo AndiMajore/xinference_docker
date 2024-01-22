@@ -1,0 +1,24 @@
+{
+    "auth_config": {
+        "algorithm": "HS256",
+        "secret_key": "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7",
+        "token_expire_in_minutes": 30
+    },
+    "user_config": [
+        {
+            "username": "user1",
+            "password": "secret1",
+            "permissions": [
+                "admin"
+            ]
+        },
+        {
+            "username": "user2",
+            "password": "secret2",
+            "permissions": [
+                "models:list",
+                "models:read"
+            ]
+        }
+    ]
+}

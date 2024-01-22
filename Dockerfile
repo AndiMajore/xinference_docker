@@ -5,7 +5,7 @@ RUN mamba install python=3.10
 RUN mamba install -c conda-forge cxx-compiler
 
 # Install all xinference dependencies
-RUN pip install xinference[all]==0.7.1
+RUN pip install xinference[all]==0.8.1
 
 RUN mamba install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch-nightly -c nvidia
 
