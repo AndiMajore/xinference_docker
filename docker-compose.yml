@@ -10,7 +10,7 @@ services:
     volumes:
       - /srv/llm/xinference_cache/:/tmp/xinference/
       - /cosybio/project/LLM/xinference_configs/:/cosybio/project/LLM/xinference_configs/
-#      - ./config.json:/config.json
+      - ./config.json:/config.json
 #      - /cosybio/archive/old_projects/LLM/models/:/cosybio/archive/old_projects/LLM/models/
     ports:
       - "9997:9997"

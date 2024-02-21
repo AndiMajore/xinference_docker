@@ -1,9 +1,9 @@
 #!/bin/bash
 sleep 15
 if [ -f /config.json ]; then
-   xinference login -e https://llm.cosy.bio --username $ADMIN_USER --password $ADMIN_PASSWORD
+   xinference login -e http://127.0.0.1:9997 --username $ADMIN_USER --password $ADMIN_PASSWORD
 fi
-#xinference register --persist --file /cosybio/project/LLM/xinference_configs/llama2-13b-chat-hf-untouched.json
+#xinference register --persist --file /cosybio/project/LLM/xinference_configs/codellama-70b-instruct-hf-untouched.json
 #xinference register --persist --file /cosybio/project/LLM/xinference_configs/llama2-13b-hf-untouched.json
 #xinference register --persist --file /cosybio/project/LLM/xinference_configs/phi-2.json
 #xinference register --persist --file /cosybio/project/LLM/xinference_configs/mixstral-8x7B-instruct.json
