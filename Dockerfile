@@ -14,7 +14,9 @@ RUN pip install xinference[transformers]==0.9.0
 #RUN mamba install git
 #RUN git clone https://github.com/AndiMajore/inference.git
 
-RUN mamba install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch-nightly -c nvidia
+#RUN pip install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch-nightly -c nvidia
+RUN pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+
 #RUN python -m cupyx.tools.install_library --library nccl --cuda 12.1
 RUN pip install sentence-transformers
 
